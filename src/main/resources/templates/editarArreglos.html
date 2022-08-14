@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:replace="Layout/Plantilla::head"></head>
+<header th:replace="Layout/Plantilla::Barra"></header>
+
+<body>
+    <section>
+        <h1 class="text-center m-5"> Editar arreglos</h1>
+        <div class="container">
+            <form th:action="@{/arreglos/add}" method="post" th:object="${item}" enctype="multipart/form-data">
+
+                <input type="hidden" class="form-control" name="idArreglos">
+
+                <div class="form-control">
+                    <label for="titulo"> Titulo </label>
+                    <input required type="text" class="form-control" name="titulo" th:field="*{titulo}">
+                    <br>
+                </div>
+                <div class="form-control">
+                    <label for="precio"> Precio </label>
+                    <input required type="number" class="form-control" name="precio" th:field="*{precio}">
+                    <br>
+                </div>
+
+                <div class="form-control">
+                    <label for="descripcion"> Descripcion </label>
+                    <input required type="text" class="form-control" name="descripcion" th:field="*{descripcion}">
+                    <br>
+                </div>
+                <div class="form-control">
+                    <label for="file"> Imagen </label>
+                    <input required type="file" class="form-control" name="file">
+                    <br>
+                </div>
+                <button type="submit" class="btn btn-primary btn-success">Agregar</button>
+            </form>
+        </div>
+    </section>
+    </form>
+
+</body>
+
+</html>

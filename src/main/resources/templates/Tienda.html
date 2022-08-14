@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Layout/Plantilla::head"></head>
+<header th:replace="Layout/Plantilla::Barra"></header>
+
+<body>
+    <section>
+        <div class="container text-center">
+            <h6 class="used" >Tienda</h6>
+            <a th:href="@{/arreglos/new}" class="btn btn-primary add">Agregar</a>
+        </div>
+        <article class="container" th:each="item : ${arreglos}">
+            <div class="card" style="width: 18rem;">
+                <img th:src="@{'/img/'+${item.imagen}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 th:text="${item.titulo}" class="card-title"></h5>
+                    <span th:text="${item.precio}" class="card-text"></span>
+                    <p th:text="${item.descripcion}" class="card-text"></p>
+                    <a href="#" class="btn btn-primary">ver</a>
+                    <a th:href="@{/arreglos/edit/} + ${item.idArreglos}" class="btn btn-primary edit">Editar</a>
+                    <a th:href="@{/arreglos/delete/} + ${item.idArreglos}" class="btn btn-danger delete">Eliminar</a>
+                </div>
+            </div>
+        </article>
+
+        </article>
+        
+        
+    </section>
+</body>
+</html>
