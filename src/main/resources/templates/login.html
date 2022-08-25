@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head th:replace="layout/plantilla::head"></head>
+
+<body class="bk">
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2 class="login">Login <br> <br> [[#{pagina.titulo}]]</h2> <br> <br>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-md-10 col-sm-12">
+            <div class="login-form">
+                    <form method="post" th:action="@{/login}">
+                        <div class="row py-1 mb-2 bg-light">
+                            <label for="username">[[#{login.username}]]</label>
+                            <input type="text" name="username" id="username"/>
+                        </div>
+                        <div class="row py-1 mb-2 bg-light">
+                            <label for="password">[[#{login.password}]]</label>
+                            <input type="password" name="password" id="password"/>
+                        </div>
+                    <button type="submit"  class="btn btn-black">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

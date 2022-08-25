@@ -5,14 +5,12 @@
 <header th:replace="Layout/Plantilla::Barra"></header>
 
 <body>
-    <br>
-    <br>
     <section>
-        <h1 class="text-center m-5">[[#{editar.arregar}]] </h1>
+        <h1 class="text-center m-5">[[#{editar.ramos}]]</h1>
         <div class="container">
-            <form th:action="@{/arreglos/add}" method="post" th:object="${item}" enctype="multipart/form-data">
+            <form th:action="@{/ramos/add}" method="post" th:object="${item}" enctype="multipart/form-data">
 
-                <input type="hidden" class="form-control" name="idArreglos" th:value="${item.idArreglos}">
+                <input type="hidden" class="form-control" th:value="${item.idRamos}">
 
                 <div class="form-control">
                     <label for="titulo"> Titulo </label>

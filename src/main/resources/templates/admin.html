@@ -2,13 +2,14 @@
 <html lang="ES">
 
 <head th:replace="Layout/Plantilla::head"></head>
-<header th:replace="Layout/Plantilla::Barra"></header>
+<header th:replace="Layout/Plantilla::admin"></header>
 
 <body>
     <section class=" text-center">
         <br>
         <br>
         <h1 class="m-5">[[#{arreglos.titulo}]]</h1>
+        <a th:href="@{/arreglos/new}" class="btn btn-primary text-center ">[[#{boton.agregar}]]</a>
         <div class="container" th:each="item : ${arreglos}">
             <div class="row">
                 <div class="col-md-12 m-3 text-center">
@@ -19,6 +20,11 @@
                             <p th:text="${item.descripcion}" class="card-text"></p>
                             <h5>Precio</h5>
                             <span th:text="${item.precio}" class="card-text"></span>
+                            <br>
+                            <br>
+                            <a th:href="@{/arreglos/edit/} + ${item.idArreglos}" class="btn btn-primary edit">[[#{boton.editar}]]</a>
+                            <a th:href="@{/arreglos/delete/} + ${item.idArreglos}"
+                                class="btn btn-danger delete">[[#{boton.eliminar}]]</a>
                         </div>
                     </div>
                 </div>
@@ -29,26 +35,7 @@
         <br>
         <br>
         <h1 class="m-5">[[#{ramos.titulo}]]</h1>
-        <div class="container" th:each="item : ${fechas}">
-            <div class="row">
-                <div class="col-md-12 m-3 text-center">
-                    <div class="card">
-                        <div class="card-body ">
-                            <img th:src="@{'/img/'+${item.imagen}}" class="card-img-top" style="max-width: 35rem; ">
-                            <h5 th:text="${item.titulo}" class="card-title"></h5>
-                            <p th:text="${item.descripcion}" class="card-text"></p>
-                            <h5>Precio</h5>
-                            <span th:text="${item.precio}" class="card-text"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class=" text-center">
-        <br>
-        <br>
-        <h1 class="m-5">[[#{fechasespeciales.titulo}]]</h1>
+        <a th:href="@{/ramos/new}" class="btn btn-primary text-center ">[[#{boton.agregar}]]</a>
         <div class="container" th:each="item : ${ramos}">
             <div class="row">
                 <div class="col-md-12 m-3 text-center">
@@ -59,6 +46,37 @@
                             <p th:text="${item.descripcion}" class="card-text"></p>
                             <h5>Precio</h5>
                             <span th:text="${item.precio}" class="card-text"></span>
+                            <br>
+                            <br>
+                            <a th:href="@{/ramos/edit/} + ${item.idRamos}" class="btn btn-primary edit">[[#{boton.editar}]]</a>
+                            <a th:href="@{/ramos/delete/} + ${item.idRamos}"
+                                class="btn btn-danger delete">[[#{boton.eliminar}]]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=" text-center">
+        <br>
+        <br>
+        <h1 class="m-5">[[#{fechasespeciales.titulo}]]</h1>
+        <a th:href="@{/fechas/new}" class="btn btn-primary text-center ">[[#{boton.agregar}]]</a>
+        <div class="container" th:each="item : ${fechas}">
+            <div class="row">
+                <div class="col-md-12 m-3 text-center">
+                    <div class="card">
+                        <div class="card-body ">
+                            <img th:src="@{'/img/'+${item.imagen}}" class="card-img-top" style="max-width: 35rem; ">
+                            <h5 th:text="${item.titulo}" class="card-title"></h5>
+                            <p th:text="${item.descripcion}" class="card-text"></p>
+                            <h5>Precio</h5>
+                            <span th:text="${item.precio}" class="card-text"></span>
+                            <br>
+                            <br>
+                            <a th:href="@{/fechas/edit/} + ${item.idfechasEspeciales}" class="btn btn-primary edit">[[#{boton.editar}]]</a>
+                            <a th:href="@{/fechas/delete/} + ${item.idfechasEspeciales}"
+                                class="btn btn-danger delete">[[#{boton.eliminar}]]</a>
                         </div>
                     </div>
                 </div>

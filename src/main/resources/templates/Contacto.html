@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ES">
+
 <head th:replace="Layout/Plantilla::head"></head>
 <header th:replace="Layout/Plantilla::Barra"></header>
 
 <body>
-    
-</body>
+
+    <body>
+        <section>
+            <br>
+            <br>
+            <br>
+            <div class="  text-center m-3" >
+                <img src="../img/michs.jpg" class="img-fluid card-img rounded-circle"
+                    style="height: 20rem; width: 20rem; margin-top: 20px;">
+            </div>
+                <div class="col p-4 d-flex flex-column position-static text-center">
+                    <strong class="d-inline-block mb-2 text-primary">[[#{posicion.titulo}]]</strong>
+                    <h3 class="mb-0">Michelle Tavares Jimenez</h3>
+                    <br />
+                    <p class="card-text mb-auto">[[#{estudiante.carrera}]]</p>
+                </div>
+        </section>
+
+        <section>
+            <div class="container" >
+                <div class="row">
+                    <div class="col-md-12 m-3 ">
+                     
+
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+    </body>
+    <footer th:replace="Layout/Plantilla::footer"></footer>
+
 </html>
